@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>TODO WEB</title>
+<link rel="icon" href="/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="css/base.css">
+</head>
+<body>
+<div class="row">
+    <div class="center">
+      <h1 class="txt-rotate" data-period="500" data-rotate='[ "LET US TODO WEB TOGHTER!", "www.TodoWEB.cn", "让我们一起做网站", "! 网站建设中敬请期待 !", "加入我们吧","在梦想的路上一路前行..." ]'></h1>
+    </div>
+</div>
+<div id="level">
+
+  <div id="content">
+    <div id="gears">
+      <div id="gears-static"></div>
+      <div id="gear-system-1">
+        <div class="shadow" id="shadow15"></div>
+        <div id="gear15"></div>
+        <div class="shadow" id="shadow14"></div>
+        <div id="gear14"></div>
+        <div class="shadow" id="shadow13"></div>
+        <div id="gear13"></div>
+      </div>
+      <div id="gear-system-2">
+        <div class="shadow" id="shadow10"></div>
+        <div id="gear10"></div>
+        <div class="shadow" id="shadow3"></div>
+        <div id="gear3"></div>
+      </div>
+      <div id="gear-system-3">
+        <div class="shadow" id="shadow9"></div>
+        <div id="gear9"></div>
+        <div class="shadow" id="shadow7"></div>
+        <div id="gear7"></div>
+      </div>
+      <div id="gear-system-4">
+        <div class="shadow" id="shadow6"></div>
+        <div id="gear6"></div>
+        <div id="gear4"></div>
+      </div>
+      <div id="gear-system-5">
+        <div class="shadow" id="shadow12"></div>
+        <div id="gear12"></div>
+        <div class="shadow" id="shadow11"></div>
+        <div id="gear11"></div>
+        <div class="shadow" id="shadow8"></div>
+        <div id="gear8"></div>
+      </div>
+      <div class="shadow" id="shadow1"></div>
+      <div id="gear1"></div>
+      <div id="gear-system-6">
+        <div class="shadow" id="shadow5"></div>
+        <div id="gear5"></div>
+        <div id="gear2"></div>
+      </div>
+      <div class="shadow" id="shadowweight"></div>
+      <div id="chain-circle"></div>
+      <div id="chain"></div>
+      <div id="weight"></div>
+    </div>
+  </div>
+  <div id="footer">
+    <p>Copyright &copy;2017 www.todoweb.cn</p>
+  </div>
+</div>
+<script>
+var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+  this.el.innerHTML = this.txt+'|';
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+  if (this.isDeleting) { delta /= 2; }
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+
+};
+$(function(){
+  var onClass = "on";
+  var showClass = "show";
+   
+  $("input").bind("checkval",function(){
+    var label = $(this).prev("label");
+    if(this.value !== ""){
+      label.addClass(showClass);
+    } else {
+      label.removeClass(showClass);
+    }
+  }).on("keyup",function(){
+    $(this).trigger("checkval");
+  }).on("focus",function(){
+    $(this).prev("label").addClass(onClass);
+  }).on("blur",function(){
+      $(this).prev("label").removeClass(onClass);
+  }).trigger("checkval");
+});
+</script>
+</body>
+</html>

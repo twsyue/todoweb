@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="jQueryAssets/jquery-1.11.1.min.js"></script>
+</head>
+<style>
+.container{ width:1200px; margin:0 auto;}
+.box{ width:280px; float:left; margin:10px; position:relative;}
+.box img { width:100%;}
+.box_cover1{
+    background: linear-gradient(to bottom right,#d38312,#417711);
+}
+.box_cover2{
+background: #4776E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box_cover3{
+	background: #2BC0E4;  /* /Bora Bora */
+background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box_cover4{
+	background: #3D7EAA;  /* Opa */
+background: -webkit-linear-gradient(to right, #FFE47A, #3D7EAA);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFE47A, #3D7EAA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box_cover5{background: #24C6DC;  /*mantel */
+background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #514A9D, #24C6DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box_cover6{background: #DC2424;  /* Dracula */
+background: -webkit-linear-gradient(to right, #4A569D, #DC2424);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4A569D, #DC2424); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box_cover7{background: #FC354C;  /* miaka */
+background: -webkit-linear-gradient(to right, #0ABFBC, #FC354C);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0ABFBC, #FC354C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box_cover8{background: #C9FFBF;  /* Virgin */
+background: -webkit-linear-gradient(to right, #FFAFBD, #C9FFBF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFAFBD, #C9FFBF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box_cover9{background: #70e1f5;  /* Shore */
+background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box_cover10{background: #FDFC47;  /* Martini */
+background: -webkit-linear-gradient(to right, #24FE41, #FDFC47);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #24FE41, #FDFC47); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box_cover11{background: #FEAC5E;  /* Atlas*/
+background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box_cover12{background: #fc00ff;  /* Timber*/
+background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #00dbde, #fc00ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box_cover13{background: #00C9FF;  /* /Back To Earth */
+background: -webkit-linear-gradient(to right, #92FE9D, #00C9FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #92FE9D, #00C9FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box_cover14{
+	background: #c2e59c;  /* Green and Blue */
+background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #64b3f4, #c2e59c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box_cover15{background: #16BFFD;  /* Transfile */
+background: -webkit-linear-gradient(to right, #CB3066, #16BFFD);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #CB3066, #16BFFD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+img{ display:block; opacity:1}
+.mcover{position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 4;
+    opacity:0.55;
+    box-shadow: inset 0 0 100px #000;
+    -webkit-box-shadow: inset 0 0 100px #000;
+    -ms-box-shadow: inset 0 0 100px #000;
+    -moz-box-shadow: inset 0 0 100px #000;
+
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+}
+.mcover2 {
+    box-shadow: inset 0 -30px 83px #000;
+    -webkit-box-shadow: inset 0 -30px 83px #000;
+    -ms-box-shadow: inset 0 -30px 83px #000;
+    -moz-box-shadow: inset 0 -30px 83px #000;
+}
+.mcover3 {
+    box-shadow: inset 0 -30px 120px #fc00ff;
+    -webkit-box-shadow: inset 0 -30px 120px #fc00ff;
+    -ms-box-shadow: inset 0 -30px 120px #fc00ff;
+    -moz-box-shadow: inset 0 -30px 120px #fc00ff;
+}
+.mcover4 {
+    box-shadow: inset 0 -30px 120px #00dbde;
+    -webkit-box-shadow: inset 0 -30px 120px #00dbde;
+    -ms-box-shadow: inset 0 -30px 120px #00dbde;
+    -moz-box-shadow: inset 0 -30px 120px #00dbde;
+}
+.mcover5 {
+    box-shadow: inset 0 -30px 120px #64b3f4;
+    -webkit-box-shadow: inset 0 -30px 120px #64b3f4;
+    -ms-box-shadow: inset 0 -30px 120px #64b3f4;
+    -moz-box-shadow: inset 0 -30px 120px #64b3f4;
+}
+.mcover6 {
+    box-shadow: inset 0 -30px 120px #c2e59c;
+    -webkit-box-shadow: inset 0 -30px 120px #c2e59c;
+    -ms-box-shadow: inset 0 -30px 120px #c2e59c;
+    -moz-box-shadow: inset 0 -30px 120px #c2e59c;
+}
+.box:hover .mcover{ 
+ opacity:0.3;
+box-shadow: none;
+    -webkit-box-shadow: none;
+    -ms-box-shadow: none;
+    -moz-box-shadow: none;}
+.clear{ clear:both;}
+.header{ width:100%;
+overflow:hidden}
+
+
+
+.search_bar{position: relative;margin-top: 10px; 
+width: 0%;min-width: 60px;height: 60px; 
+float: right;overflow: hidden; 
+-webkit-transition: width 0.3s; 
+-moz-transition: width 0.3s; 
+transition: width 0.3s; 
+-webkit-backface-visibility: hidden; 
+background:#162934; 
+} 
+
+.input{ 
+position: absolute;top: 0;right: 0; 
+border: none;outline: none; 
+width: 98%;height: 60px; line-height:60px;z-index: 10; 
+font-size: 20px;color: #f9f9f9;background:transparent 
+} 
+
+.search_ico,.search_btn { 
+width: 60px;height: 60px;display: block; 
+position: absolute;right: 0;top: 0; 
+padding: 0;margin: 0;line-height: 60px;cursor: pointer; 
+} 
+
+.search_ico{background: #e67e22 url(icon.png) no-repeat 18px 20px;z-index:90;} 
+.search_open{width: 100% !important; z-index:1002} 
+#show{position:absolute; padding:20px} 
+</style>
+<body>
+<div class="header">
+<div id="search_bar" class="search_bar"> 
+<form id="myform"> 
+<input class="input" placeholder="想搜点什么呢..." type="text" name="key" id="search"> 
+<input class="search_btn" type="submit" value=""> 
+<span class="search_ico"></span> 
+</form> 
+</div> 
+</div>
+<script>
+$(function(){ 
+$(".search_ico").click(function(){ 
+$(".search_bar").toggleClass('search_open'); 
+var keys = $("#search").val(); 
+if(keys.length>2){ 
+$("#search").val(''); 
+$("#myform").submit(); 
+}else{ 
+return false; 
+} 
+}); 
+}); 
+</script>
+
+<div class="container">
+	<div class="box">
+    <img src="imgs/1492429805.jpg" alt=""/>
+    <div class="mcover box_cover14"></div>
+    </div>
+	<div class="box">
+    <img src="imgs/1492526524.jpg" alt=""/>
+    <div class="mcover box_cover4"></div>
+    </div>
+    <div class="box">
+    <img src="imgs/1490852730.jpg" alt=""/>
+    <div class="mcover box_cover5"></div>
+    </div>
+	<div class="box">
+    <img src="imgs/1492429805.jpg" alt=""/>
+    <div class="mcover box_cover6"></div>
+    </div>
+    
+<!----------------------------------------------------->
+	<div class="box">
+    <img src="imgs/1492429805.jpg" alt=""/>
+    <div class="mcover box_cover8"></div>
+    </div>
+	<div class="box">
+    <img src="imgs/1492526524.jpg" alt=""/>
+    <div class="mcover box_cover9"></div>
+    </div>
+	<div class="box">
+    <img src="imgs/1492526524.jpg" alt=""/>
+    <div class="mcover box_cover7"></div>
+    </div>
+	<div class="box">
+    <img src="imgs/1491792506.jpg" alt=""/>
+    <div class="mcover box_cover15"></div>
+    </div>
+	
+	<div class="box">
+    <img src="imgs/1490861728.jpg" alt=""/>
+    <div class="mcover box_cover3"></div>
+    </div>
+	<div class="box">
+    <img src="imgs/1490247256.jpg" alt=""/>
+    <div class="mcover box_cover13"></div>
+    </div>
+	<div class="box">
+    <img src="imgs/1490852730.jpg" alt=""/>
+    <div class="mcover box_cover12"></div>
+    </div>
+    <div class="box">
+    <img src="imgs/1491792506.jpg" alt=""/>
+    <div class="mcover box_cover5"></div>
+    </div>
+	
+	
+	<div class="box">
+    <img src="imgs/1490861728.jpg" alt=""/>
+    <div class="mcover box_cover11"></div>
+    </div>
+    <div class="box">
+    <img src="imgs/1491792506.jpg" alt=""/>
+    <div class="mcover box_cover10"></div>
+    </div>
+    <div class="box ">
+    <img src="imgs/1490247256.jpg" alt=""/>
+    <div class="mcover box_cover1"></div>
+    </div>
+<div class="clear"></div>
+</div>
+<div class="container">
+	<div class="box">
+    <img src="imgs/1490852730.jpg" alt=""/>
+   
+    </div>
+	<div class="box">
+    <img src="imgs/1490852730.jpg" alt=""/>
+    <div class="mcover"></div>
+    </div>
+	<div class="box">
+    <img src="imgs/1490852730.jpg" alt=""/>
+    <div class="mcover mcover2"></div>
+    </div>
+	<div class="box">
+    <img src="imgs/1490852730.jpg" alt=""/>
+    <div class="mcover mcover3"></div>
+    </div>
+	<div class="box">
+    <img src="imgs/1490852730.jpg" alt=""/>
+    <div class="mcover mcover4"></div>
+    </div>
+	<div class="box">
+    <img src="imgs/1490852730.jpg" alt=""/>
+    <div class="mcover mcover5"></div>
+	</div>
+	<div class="box">
+    <img src="imgs/1490852730.jpg" alt=""/>
+    <div class="mcover mcover6"></div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
